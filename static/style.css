@@ -1,0 +1,36 @@
+
+body {
+    background-color: dodgerblue;
+}
+
+/* Employee Predction Web App*/
+h1 {
+    color: silver;
+    font-size: 48px;
+    text-align: center;
+}
+
+/* Fill fors*/
+h2 {
+    padding-left: 10px;
+    color: black;
+}
+
+/* Employee Predction Web App*/
+label {
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+/* Employee Predction Web App*/
+#degree {
+    color: lightgray;
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+#degreeheading {
+    color: black;
+}
