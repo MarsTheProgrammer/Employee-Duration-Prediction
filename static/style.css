@@ -4,19 +4,29 @@ body {
 }
 
 /* Employee Predction Web App*/
-h1 {
+#pagetitle {
     color: silver;
     font-size: 48px;
     text-align: center;
 }
 
-/* Fill fors*/
+h1 {
+    padding-left: 10px;
+    color: black;
+}
+
+/* Fill forms*/
 h2 {
     padding-left: 10px;
     color: black;
 }
 
-/* Employee Predction Web App*/
+h3 {
+    padding-left: 10px;
+    color: black;
+}
+
+/* Employee Prediction Web App*/
 label {
     color: black;
     font-weight: bold;
@@ -24,7 +34,7 @@ label {
     padding-left: 20px;
 }
 
-/* Employee Predction Web App*/
+/* Please select your level of education*/
 #degree {
     color: lightgray;
     font-size: 25px;
