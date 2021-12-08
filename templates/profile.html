@@ -8,38 +8,38 @@
 <br>
 
 <h1>Please fill out the following forms below</h1><br>
+<hr>
+<br>
 
-<h2 id="name">Name:</h2>
-<h3>Please enter your name</h3>
+<form id="page" action="{{ url_for('gfg')}}" method="POST">
 
-<form>
-    <label for="name">Name: </label>
-    <input type="text" id="fname" name="fname">
-</form><br>
+<!--Name --->
+<h2>Name</h2>
+<p>Please enter your name</p>
+    <label>Name: </label>
+    <input type="text" id="fname" name="fname" required>
 
-<h2 id="degreeheading">Degree:</h2>
+<br>
+<hr>
 
-<p id="degree">Please select your level of education</p>
-<form>
-    <input type="radio" id="bachelor" name="degree" value="Bachelor">
+<!--Degree--->
+<h2>Degree</h2>
+<p>Please select your level of education</p>
+    <input type="radio" id="bachelor" name="degree" value="0" required>
     <label for="bachelor">Bachelors</label>
-    <input type="radio" id="master" name="degree" value="Master">
+    <input type="radio" id="master" name="degree" value="1" required>
     <label for="bachelor">Masters</label>
-    <input type="radio" id="phd" name="degree" value="PHD">
+    <input type="radio" id="phd" name="degree" value="2" required>
     <label for="bachelor">PHD</label>
-</form>
+
 <br><br>
+<hr>
 
-<h2 id="joiningyear">Joining Year:</h2>
-
+<!--Joining Year --->
+<h2>Joining Year:</h2>
 <p>Please select the year you joined the company</p>
-
-<!-- action="/action_page.php"--->
-<!-- input type="submit" value="Submit"--->
-
-<form>
-  <label for="joiningyear">Select year joined</label>
-  <select name="year" id="year">
+  <label>Select year joined</label>
+  <select name="year" required>
     <option value="2012">2012</option>
     <option value="2013">2013</option>
     <option value="2014">2014</option>
@@ -47,14 +47,82 @@
     <option value="2016">2016</option>
     <option value="2017">2017</option>
   </select>
-</form>
+
+<br>
+<hr>
+
+<!--City --->
+<h2>City</h2>
+<p>Please select a city</p>
+    <label>Select city: </label>
+  <select name="city" required>
+    <option value="0">Bangalore</option>
+    <option value="1">Pune</option>
+    <option value="2">New Delhi</option>
+  </select>
+
+<br>
+<hr>
+
+<!--Salary --->
+<h2>Payment Tier</h2>
+<p>Please select your payment tier</p>
+    <label>Select city: </label>
+  <select name="salary">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+
+<br>
+<hr>
+
+<!--Age --->
+<h2>Age</h2>
+<p>Please enter your age</p>
+    <label>Age:</label>
+    <input type="number" id="age" name="age" min="1" max="99" required placeholder="Enter age">
+<br>
+<hr>
+
+<!--Gender --->
+<h2>Gender</h2>
+<p>Please select your gender</p>
+    <label>Select gender </label>
+  <select name="gender">
+    <option value="1">Male</option>
+    <option value="0">Female</option>
+  </select>
+
+<br>
+<hr>
+
+<!--Ever Benched --->
+<h2>Ever Benched</h2>
+<p>Have you ever been benched on projects?</p>
+    <input type="radio" id="yes" name="benched" value="1" required>
+    <label for="yes">Yes</label>
+    <br>
+    <br>
+    <input type="radio" id="no" name="benched" value="0">
+    <label for="no">No</label>
+
+<br>
+<hr>
+
+<!-- Experience --->
+<h2>Experience</h2>
+<p>Please enter years of experience in current domain</p>
+    <label for="exp">Years of Experience:  </label>
+    <input type="number" id="exp" name="exp" required placeholder="Enter in years">
+
 <br><br>
 
-
-<br><br>
-<form action="/action">
- <input type="submit" value="Submit">
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
 </form>
+
+
 
 </body>
 </html>

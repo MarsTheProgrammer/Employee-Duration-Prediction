@@ -19,11 +19,19 @@ h1 {
 h2 {
     padding-left: 10px;
     color: black;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 h3 {
     padding-left: 10px;
     color: black;
+}
+
+hr {
+    width: 40%;
+    position: absolute;
+    left: 10px;
 }
 
 /* Employee Prediction Web App*/
@@ -32,6 +40,12 @@ label {
     font-weight: bold;
     font-size: 18px;
     padding-left: 20px;
+}
+
+p {
+    padding-left: 20px;
+    font-size: 20px;
+    color: burlywood;
 }
 
 /* Please select your level of education*/
@@ -44,3 +58,9 @@ label {
 #degreeheading {
     color: black;
 }
+
+#everBenched {
+    padding-left: 10px;
+}
+
+
