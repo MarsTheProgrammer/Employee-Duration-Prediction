@@ -1,0 +1,42 @@
+body {
+    background-color: dodgerblue;
+    text-align: center;
+}
+
+form {
+    font-weight: bold;
+    font-size = 36px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 5px;
+    border: 5px solid grey;
+    width: 450px;
+    background: white;
+    margin: 0 auto;
+}
+
+#user {
+    height: 25px
+}
+
+#pass {
+    height: 25px
+}
+
+#userlabel {
+    font-size: 25px
+}
+
+#passlabel {
+    font-size: 25px
+}
+
+
+button {
+    margin-left: 50px;
+    margin-top: 25px;
+    width: 100px;
+    height: 40px;
+    background: beige;
+
+}

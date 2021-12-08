@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+
 # education, joiningYear, city, paymentTier, age, gender,
 #   everBenched, experienceInCurrentDomain -> leaveornot
 
@@ -9,7 +10,11 @@ app = Flask(__name__)
 def index():
     return render_template("profile.html")
 
-@app.route('/inputdata', methods=["GET", "POST"])
+@app.route('/signin', methods=["GET", "POST"])
+def sign_in():
+    return render_template("signin.html")
+
+@app.route('/data', methods=["GET", "POST"])
 def gfg():
     if request.method == "POST":
         first_name = request.form.get('fname')
@@ -22,9 +27,8 @@ def gfg():
         benched = request.form.get('benched')
         experience = request.form.get('exp')
 
-        return "Name: " + first_name + \
-               " Degree: " + degree + \
-               " Joined: " + year_joined + \
+        return "Degree: " + degree + \
+               " Year Joined: " + year_joined + \
                " City: " + city + \
                " Salary: " + salary + \
                " Age: " + age + \
@@ -32,42 +36,8 @@ def gfg():
                " Benched: " + benched + \
                " Experience: " + experience
 
-        return render_template("input.html")
+    return render_template("input.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
