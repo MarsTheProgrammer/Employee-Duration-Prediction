@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request
 
+import jupytermodel
+
 app = Flask(__name__)
 
-
+model_list = []
 # education, joiningYear, city, paymentTier, age, gender,
 #   everBenched, experienceInCurrentDomain -> leaveornot
 
@@ -26,6 +28,16 @@ def gfg():
         gender = request.form.get('gender')
         benched = request.form.get('benched')
         experience = request.form.get('exp')
+        model_list.clear()
+        model_list.append(degree)
+        model_list.append(year_joined)
+        model_list.append(city)
+        model_list.append(salary)
+        model_list.append(age)
+        model_list.append(gender)
+        model_list.append(benched)
+        model_list.append(experience)
+
 
         return "Degree: " + degree + \
                " Year Joined: " + year_joined + \
@@ -38,6 +50,8 @@ def gfg():
 
     return render_template("input.html")
 
+test_list = [2,2017, 1, 3, 23, 1, 0, 0]
+jupytermodel.predict_list(test_list)
 
 if __name__ == "__main__":
     app.run(debug=True)
