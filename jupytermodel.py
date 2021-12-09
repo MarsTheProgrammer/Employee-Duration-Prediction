@@ -5,8 +5,6 @@ from sklearn.model_selection import train_test_split
 
 employee = pd.read_csv(r"C:\Users\mbcme\Documents\employee-numbers-only.csv")
 
-print(employee.head())
-
 X=employee.drop("LeaveOrNot", axis=1)
 
 y=employee["LeaveOrNot"]
@@ -22,19 +20,23 @@ clf.fit(X_train, y_train)
 y_preds = clf.predict(X_test)
 
 new_x= np.array([2,2017, 1, 3, 23, 1, 0, 0]).reshape(1,-1)
-print(clf.predict(new_x))
 
+test_arr = [2,2017, 1, 3, 23, 1, 0, 0]
 
 def predict_list(model_list):
-    list = np.array(model_list)
-    list.reshape((1, -1))
-    result = clf.predict(list)
-    print(clf.predict(list))
 
-    return result
+    arr = np.array([model_list])
+    arr.reshape((1, -1))
+    result = clf.predict(arr)
+    string1 = ''.join(str(e) for e in result)
 
+    if string1 == "0":
+        stay = "Employee will stay at company for the next 2 years."
+        return stay
+    leave = "Employee will leave the company in the next 2 years"
+    return leave
 
-
+predict_list(test_arr)
 
 
 

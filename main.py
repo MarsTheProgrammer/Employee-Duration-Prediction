@@ -16,7 +16,7 @@ def index():
 def sign_in():
     return render_template("signin.html")
 
-@app.route('/data', methods=["GET", "POST"])
+@app.route('/input', methods=["GET", "POST"])
 def gfg():
     if request.method == "POST":
         first_name = request.form.get('fname')
@@ -38,20 +38,9 @@ def gfg():
         model_list.append(benched)
         model_list.append(experience)
 
-
-        return "Degree: " + degree + \
-               " Year Joined: " + year_joined + \
-               " City: " + city + \
-               " Salary: " + salary + \
-               " Age: " + age + \
-               " Gender: " + gender + \
-               " Benched: " + benched + \
-               " Experience: " + experience
+        return " Prediction: " + (jupytermodel.predict_list(model_list))
 
     return render_template("input.html")
-
-test_list = [2,2017, 1, 3, 23, 1, 0, 0]
-jupytermodel.predict_list(test_list)
 
 if __name__ == "__main__":
     app.run(debug=True)
