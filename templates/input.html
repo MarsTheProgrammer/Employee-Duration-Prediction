@@ -3,6 +3,41 @@
 <body>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='inputstyle.css') }}">
 
+<br><br>
+<h1 id="top">Welcome {{ name }}!</h1>
 
+<br>
+
+<form>
+<h3>{{ prediction }}</h3>
+</form>
+
+<br><br>
+
+<h2>Gender/LeaveOrNot vs Occurrences</h2>
+<img src="{{url_for('static', filename='bar-graph.png')}}" align="middle" />
+<br><br>
+<p>The first chart shows the number of occurrences
+        per gender by leaving or staying. You can see
+        that most males stay and most females stay.</p>
+
+<br><br>
+<h2>BenchedOrNot/LeaveOrNot vs Occurrences</h2>
+<img src="{{url_for('static', filename='line-graph.png')}}" align="middle" />
+<br><br>
+<p>The second chart shows the trend by how many
+    employees stay when benched and not benched. As this line graph
+    describes, employees are much more likley to stay if they are
+    not benched.</p>
+
+<br><br>
+<h2>Degree vs LeaveOrNot</h2>
+<img src="{{url_for('static', filename='pie-chart.png')}}" align="middle" />
+<br><br>
+<p>The third pie chart shows that the majority of people with bachelor
+        degrees stay by almost double. Masters degree are close but still
+        majority stays. The same goes for PHD degree.</p>
+
+<br><br>
 </body>
 </html>

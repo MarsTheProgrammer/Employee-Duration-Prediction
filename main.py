@@ -5,15 +5,17 @@ import jupytermodel
 app = Flask(__name__)
 
 model_list = []
-# education, joiningYear, city, paymentTier, age, gender,
-#   everBenched, experienceInCurrentDomain -> leaveornot
+
+@app.route('/form', methods=["GET", "POST"])
+def index():
+    return render_template("form.html")
 
 @app.route('/', methods=["GET", "POST"])
-def index():
-    return render_template("profile.html")
-
-@app.route('/signin', methods=["GET", "POST"])
 def sign_in():
+    user = request.form.get('user')
+    password = request.form.get('pass')
+    # if user != "admin" and password != "admin":
+    #     return render_template("error.html")
     return render_template("signin.html")
 
 @app.route('/input', methods=["GET", "POST"])
@@ -37,10 +39,11 @@ def gfg():
         model_list.append(gender)
         model_list.append(benched)
         model_list.append(experience)
+        prediction = jupytermodel.predict_list(model_list)
 
-        return " Prediction: " + (jupytermodel.predict_list(model_list))
-
-    return render_template("input.html")
+    return render_template("input.html",
+                            prediction=prediction,
+                            name=first_name)
 
 if __name__ == "__main__":
     app.run(debug=True)

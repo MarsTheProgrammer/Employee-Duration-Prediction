@@ -6,12 +6,12 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signinstyle.css') }}">
 <body>
 
-<form>
+<form id="page" action="{{ url_for('index')}}" method="POST">
   <label id="userlabel">Username:</label>
-  <input type="text" id="user" name="signin" required>
+  <input type="text" id="user" name="signin" required placeholder="Username" oninvalid="Invalid Username">
   <br><br>
   <label id="passlabel">Password:</label>
-  <input type="text" id="pass" name="signin" required>
+  <input type="password" id="pass" name="signin" required placeholder="Password">
   <br><br>
   <button type="submit">Sign In</button>
 

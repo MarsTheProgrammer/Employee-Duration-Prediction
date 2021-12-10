@@ -17,6 +17,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 clf.fit(X_train, y_train)
 
+accuracy = clf.score(X_test, y_test) * 100
+accuracy_in_str = str(accuracy)
+
 y_preds = clf.predict(X_test)
 
 new_x= np.array([2,2017, 1, 3, 23, 1, 0, 0]).reshape(1,-1)
@@ -31,9 +34,11 @@ def predict_list(model_list):
     string1 = ''.join(str(e) for e in result)
 
     if string1 == "0":
-        stay = "Employee will stay at company for the next 2 years."
+        stay = "The employee will STAY at company for the next 2 years.\n " \
+               "Accuracy of prediction {:.2f}%".format(accuracy)
         return stay
-    leave = "Employee will leave the company in the next 2 years"
+    leave = "The employee will LEAVE the company in the next 2 years.\n " \
+               "Accuracy of prediction {:.2f}%".format(accuracy)
     return leave
 
 predict_list(test_arr)
