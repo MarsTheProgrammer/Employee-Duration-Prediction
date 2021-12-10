@@ -15,7 +15,9 @@ def submit():
     if request.method == "POST":
         user = request.form.get('user')
         password = request.form.get('pass')
-        if user != "admin" and password != "admin":
+        print(password)
+        print(user)
+        if user != "admin" or password != "admin":
             return render_template("signin.html", message="Invalid username or password!")
     return render_template("form.html")
 

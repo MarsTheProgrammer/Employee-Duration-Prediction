@@ -52,3 +52,15 @@ h3 {
     background: silver;
     margin: 0 auto;
 }
+
+button {
+    margin: 0 auto;
+    margin-left: 5px;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    border: 5px solid black;
+    background: silver;
+    text-align: center;
+
+}
