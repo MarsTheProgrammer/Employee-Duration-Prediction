@@ -10,12 +10,17 @@ model_list = []
 def index():
     return render_template("form.html")
 
+@app.route('/submit', methods=["POST"])
+def submit():
+    if request.method == "POST":
+        user = request.form.get('user')
+        password = request.form.get('pass')
+        if user != "admin" and password != "admin":
+            return render_template("signin.html", message="Invalid username or password!")
+    return render_template("form.html")
+
 @app.route('/', methods=["GET", "POST"])
 def sign_in():
-    user = request.form.get('user')
-    password = request.form.get('pass')
-    # if user != "admin" and password != "admin":
-    #     return render_template("error.html")
     return render_template("signin.html")
 
 @app.route('/input', methods=["GET", "POST"])
@@ -41,7 +46,7 @@ def gfg():
         model_list.append(experience)
         prediction = jupytermodel.predict_list(model_list)
 
-    return render_template("input.html",
+    return render_template("results.html",
                             prediction=prediction,
                             name=first_name)
 

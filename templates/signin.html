@@ -3,15 +3,21 @@
 
 <html lang="en">
 
+<title>Sign In</title>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signinstyle.css') }}">
-<body>
 
-<form id="page" action="{{ url_for('index')}}" method="POST">
+<body>
+<br>
+{% if message %}
+<p id="message">{{message | safe}}</p>
+{% endif %}
+<br>
+<form id="page" action="/submit" method="POST">
   <label id="userlabel">Username:</label>
-  <input type="text" id="user" name="signin" required placeholder="Username" oninvalid="Invalid Username">
+  <input type="text" id="user" name="user" required placeholder="Username" oninvalid="Invalid Username">
   <br><br>
   <label id="passlabel">Password:</label>
-  <input type="password" id="pass" name="signin" required placeholder="Password">
+  <input type="text" id="pass" name="pass" required placeholder="Password">
   <br><br>
   <button type="submit">Sign In</button>
 
